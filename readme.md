@@ -106,7 +106,7 @@ _The speed at which the transition occurs. Can be any positive number, including
 
 ## Demo
 
-Check the example here: https://gemlarin.github.io/
+Check the example here: https://gemlarin.github.io/index.html
 
 ## Troubleshooting
 
