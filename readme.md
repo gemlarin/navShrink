@@ -1,37 +1,104 @@
+# NavShrink
 
-/* TEAM */
- 
-Web Dev - Danny Gibas
-UX Design - Matt Kaminski
-  
-/* SITE */
+NavShrink is a jQuery plugin for your Bootstrap navbar. It works by evaluating scroll position to control the expansion and contraction of the navbar.
 
-http://cleanenergyco.com
- 
-Last update: 2017/5/26
-Standards: HTML5, CSS3, SASS (original build only)
-Components: Modernizr, jQuery, Bootstrap v3, Lightbox.js, Font-Awesome, Icomoon, JQuery Tablesorter, Bootstrap Select, Knockout.js.
-Software: Brackets, SourceTree, CodeKit (original built only).
+It works in all modern browsers.
 
-Original site was built using SASS, though we have deviated from SASS recently due to numerou CSS changes performed without using the SASS documents.
-
-This site incorporates the main corporate web property, with subsections dedicated to specific departments and campaigns. Note that NOT ALL HEADERS AND FOOTERS ARE universal. Be careful to note which header and footer each page and section uses. The stylesheets used for the different content types are defined as:
-
-1. font-awesome.min.css : self explainatory
-2. lightgallery.min.css : CSS for the lightbox used sitewide.
-3. interior.css : Use in conjuction with mystyles.min.css or mystyles-alt.min.css for any pages styles like the homepage. Implements the dark footer version.
-4. interior-alt-footer.css : Use in conjuction with mystyles.min.css or mystyles-alt.min.css. Used for interior pages that implement the light footer (ie. Commercial section). 
-5. mystyles.min.css : Main custom stylesheet. The only place this is used right now is the home page.
-6. mystyles-alt.min.css : Main custom stylesheet. Used this one for internal pages.
+Tested with jQuery versions 2.0+
 
 
+## Usage
 
-The CSS document must stack in the following order when using multiple CSS docs.(Not all are required for all pages):
+If you are using the Bootstrap navbar component, you can simply include javascript file and init NavShrink with one line:
 
-1. font-awesome.min.css
-2. lightgallery.min.css
-3. interior.css
-4. interior-alt-footer.css
-5. mystyles.min.css
-6. mystyles-alt.min.css
-7. Any page specific CSS. Example: project-page-style.css
+```javascript
+$('element').navShrink();
+```
+
+### Options
+
+You're also able to use some of the options that let you customize it as you wish:
+
+```javascript
+$('.navbar').navShrink({
+anchorFinalPadding : 30, //After scroll top and bottom padding for your anchors
+anchorInitPadding  : 40, //Before scroll top and bottom padding for your anchors
+logoInitPadding    : 20, //Before scroll padding for the top and bottom of logo
+logoFinalPadding   : 12, //After scroll padding for top and bottom of logo
+logoInitHeight     : 72, //Before scroll height of logo
+logoFinalHeight    : 56, //After scroll height of logo
+bgInitColor        : 'rgba(21,21,21,1)', //background color of post scroll navbar. MUST be in RGBA with an opacity of 1.
+anchorElem         : '.navbar-nav>li>a', //anchor elements
+navContainer       : '.navbar-default', //top level element of navbar
+logoElem           : 'a.navbar-brand img', //the actual logo element
+logoParent         : 'a.navbar-brand', //the logo container element
+defaultOffset      : 80 //How far down the screen you want the trigger for the automatic navbar to occur
+});
+
+```
+
+## Documentation
+
+Here is the list of available navShrink options:
+
+##### anchorFinalPadding - number | number, default: 30
+
+Set final padding for top & bottom of your anchors
+
+##### anchorInitPadding - number | number, default: 40
+
+Set initial padding for top & bottom of your anchors
+
+##### logoInitPadding - number | number, default: 20
+
+Set initial padding for top & bottom of your logo
+
+##### logoFinalPadding  - number | number, default: 12
+
+Set final padding for top & bottom of your logo
+
+##### logoInitHeight - number | number, default: 72
+
+Set initial height for your logo
+
+##### logoFinalHeight - number | number, default: 56
+
+Set the final height for your logo
+
+##### bgInitColor  - string | default, 'rgba(21,21,21,1)'
+
+Set the background color for the navbar. This is the color it will be after scroll. Must be in RGBA format, and the opacity should be set to "1" if you want it fully opaque after scroll.
+
+##### anchorElem  - string | string, default: '.navbar-nav>li>a'
+
+Set the class for your anchor elements
+
+##### navContainer  - string | string, default: '.navbar-default'
+
+Set the class for the main navigation container
+
+##### logoElem - string | string, default: 'a.navbar-brand img'
+
+Set the class for your logo element
+
+##### logoParent - string | string, default: 'a.navbar-brand'
+
+Set the parent container of your logo element
+
+##### defaultOffset - number | number, default: 80
+
+Set the pixel value for the scroll position that the default navbar should display at if page is refreshed
+
+## Demo
+
+Check the example here: http://labs.voronianski.com/jquery.avgrund.js/
+
+## Contribution
+
+We still have some issues to fix and make navShrink better, if you have any suggestions raise them in [issues](https://github.com/voronianski/jquery.avgrund.js/issues) please.
+
+---
+
+MIT Licensed
+
+**enjoy!**
