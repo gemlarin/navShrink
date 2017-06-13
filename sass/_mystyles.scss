@@ -1,0 +1,57 @@
+/*==========================================
+CLEAN ENERGY COLLECTIVE, LLC
+_mystyles.scss Version 1.0
+==========================================*/
+
+/*==========================================
+CLEAN ENERGY COLLECTIVE, LLC
+_mystyles.scss Version 1.0
+==========================================*/
+
+.nav > li > a > img{
+    position:relative;
+    top:-3px;
+}
+
+.navbar {
+    margin-bottom: 0px;
+    min-height: 85px;
+    /* Portrait phones and smaller */
+
+    .icon-bar {
+        background-color: #333333;
+    }
+
+    .navbar-toggle {
+        border-color: #333333;
+        margin-top: 20px;
+    }
+
+    .navbar-nav {
+        font-size: 16px;
+        margin-top: 18px;
+        font-weight: normal;
+    }
+
+    .navbar-nav a:hover {
+        background: none;
+        color: #8ec041;
+    }
+
+    .navbar-nav a:focus {
+        background: none;
+        color: #8ec041 !important;
+    }
+
+    .navbar-nav .btn-sign-in-img a {
+        padding-right: 0px;
+    }
+
+    .navbar-nav .btn-sign-in-img a img {
+        margin-top: -5px;
+    }
+
+    .navbar .navbar-nav .btn-sign-in-text a {
+        padding-left: 2px;
+    }
+}
