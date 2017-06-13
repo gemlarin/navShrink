@@ -7,7 +7,7 @@ It works in all modern browsers.
 Tested with jQuery versions 2.0+
 
 ### Version
-v1.1
+v1.2
 
 ### Dependancies
 
