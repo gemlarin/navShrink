@@ -21,6 +21,10 @@ If you are using the Bootstrap navbar component, you can simply include javascri
 $('.navbar').navShrink();
 ```
 
+### NPM
+To add navShrink to your project using npm, use the following command:
+#### npm install navshrink
+
 ### Options
 
 You're also able to use some of the options that let you customize it as you wish:
