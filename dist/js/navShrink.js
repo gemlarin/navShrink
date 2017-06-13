@@ -77,7 +77,6 @@
         };
         
         var $navcontain = $(s_.navContainer);
-        
         //Update all CSS properties during scroll event
         window.addEventListener('scroll', function (event) {
             scrolling=true;

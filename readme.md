@@ -6,12 +6,14 @@ It works in all modern browsers.
 
 Tested with jQuery versions 2.0+
 
+### Version
+v1.1
 
 # Dependancies
 
 Bootstrap 3, jQuery
 
-## Usage
+### Usage
 
 If you are using the Bootstrap navbar component, you can simply include javascript file and init NavShrink with one line:
 
