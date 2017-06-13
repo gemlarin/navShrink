@@ -1,111 +1,30 @@
 0 info it worked if it ends with ok
-1 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/npm', 'publish' ]
+1 verbose cli [ '/usr/local/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'version',
+1 verbose cli   'patch' ]
 2 info using npm@4.0.5
 3 info using node@v7.4.0
-4 verbose publish [ '.' ]
-5 silly cache add args [ '.', null ]
-6 verbose cache add spec .
-7 silly cache add parsed spec Result {
-7 silly cache add   raw: '.',
-7 silly cache add   scope: null,
-7 silly cache add   escapedName: null,
-7 silly cache add   name: null,
-7 silly cache add   rawSpec: '.',
-7 silly cache add   spec: '/Users/danny.gibas/Desktop/navShrink',
-7 silly cache add   type: 'directory' }
-8 verbose addLocalDirectory /Users/danny.gibas/.npm/navshrink/1.1.0/package.tgz not in flight; packing
-9 verbose correctMkdir /Users/danny.gibas/.npm correctMkdir not in flight; initializing
-10 info lifecycle navshrink@1.1.0~prepublish: navshrink@1.1.0
-11 silly lifecycle navshrink@1.1.0~prepublish: no script for prepublish, continuing
-12 info lifecycle navshrink@1.1.0~prepare: navshrink@1.1.0
-13 silly lifecycle navshrink@1.1.0~prepare: no script for prepare, continuing
-14 verbose tar pack [ '/Users/danny.gibas/.npm/navshrink/1.1.0/package.tgz',
-14 verbose tar pack   '/Users/danny.gibas/Desktop/navShrink' ]
-15 verbose tarball /Users/danny.gibas/.npm/navshrink/1.1.0/package.tgz
-16 verbose folder /Users/danny.gibas/Desktop/navShrink
-17 verbose addLocalTarball adding from inside cache /Users/danny.gibas/.npm/navshrink/1.1.0/package.tgz
-18 verbose correctMkdir /Users/danny.gibas/.npm correctMkdir not in flight; initializing
-19 silly cache afterAdd navshrink@1.1.0
-20 verbose afterAdd /Users/danny.gibas/.npm/navshrink/1.1.0/package/package.json not in flight; writing
-21 verbose correctMkdir /Users/danny.gibas/.npm correctMkdir not in flight; initializing
-22 verbose afterAdd /Users/danny.gibas/.npm/navshrink/1.1.0/package/package.json written
-23 silly publish { name: 'navshrink',
-23 silly publish   version: '1.1.0',
-23 silly publish   description: 'A plugin for use with the navbar component in Bootstrap 3. Shrinks the height and fades in the background of the navbar while scrolling dwn the page',
-23 silly publish   main: 'index.js',
-23 silly publish   scripts: { test: 'echo "Error: no test specified" && exit 1' },
-23 silly publish   repository:
-23 silly publish    { type: 'git',
-23 silly publish      url: 'git+https://github.com/gemlarin/navShrink.git' },
-23 silly publish   keywords: [ 'Bootstrap', 'Navbar', 'shrink', 'fade' ],
-23 silly publish   author: { name: 'Danny F. Gibas' },
-23 silly publish   license: 'ISC',
-23 silly publish   bugs: { url: 'https://github.com/gemlarin/navShrink/issues' },
-23 silly publish   homepage: 'https://github.com/gemlarin/navShrink#readme',
-23 silly publish   readme: '# NavShrink\n\nNavShrink is a jQuery plugin for your Bootstrap navbar. It works by evaluating scroll position to control the expansion and contraction of the navbar. On page load, the navbar will be in its expanded height state, but will shrink to a shorter height as the page is scrolled - freeing up additional space in the viewport for content.\n\nIt works in all modern browsers.\n\nTested with jQuery versions 2.0+\n\n### Version\nv1.1\n\n### Dependancies\n\nBootstrap 3, jQuery\n\n### Usage\n\nIf you are using the Bootstrap navbar component, you can simply include javascript file and init NavShrink with one line:\n\n```javascript\n$(\'.navbar\').navShrink();\n```\n\n### NPM\nTo add navShrink to your project using npm, use the following command:\n#### npm install navshrink\n\n### Options\n\nYou\'re also able to use some of the options that let you customize it as you wish:\n\n```javascript\n$(\'.navbar\').navShrink({\nanchorFinalPadding : 30, //After scroll top and bottom padding for your anchors\nanchorInitPadding  : 40, //Before scroll top and bottom padding for your anchors\nlogoInitPadding    : 20, //Before scroll padding for the top and bottom of logo\nlogoFinalPadding   : 12, //After scroll padding for top and bottom of logo\nlogoInitHeight     : 72, //Before scroll height of logo\nlogoFinalHeight    : 56, //After scroll height of logo\nbgInitColor        : \'rgba(21,21,21,1)\', //background color of post scroll navbar. MUST be in RGBA with an opacity of 1.\nanchorElem         : \'.navbar-nav>li>a\', //anchor elements\nnavContainer       : \'.navbar-default\', //top level element of navbar\nlogoElem           : \'a.navbar-brand img\', //the actual logo element\nlogoParent         : \'a.navbar-brand\', //the logo container element\ndefaultOffset      : 80 //How far down the screen you want the trigger for the automatic navbar to occur\nspeed              : 2 //The speed at which the transition happens. Higher numbers means faster trasition. \n});\n\n```\n\n## Documentation\n\nHere is the list of available navShrink options:\n\n#### anchorFinalPadding - number | number, default: 30\n\n_Set final padding for top & bottom of your anchors_\n\n#### anchorInitPadding - number | number, default: 40\n\n_Set initial padding for top & bottom of your anchors_\n\n#### logoInitPadding - number | number, default: 20\n\n_Set initial padding for top & bottom of your logo_\n\n#### logoFinalPadding  - number | number, default: 12\n\n_Set final padding for top & bottom of your logo_\n\n#### logoInitHeight - number | number, default: 72\n\n_Set initial height for your logo_\n\n#### logoFinalHeight - number | number, default: 56\n\n_Set the final height for your logo_\n\n#### bgInitColor  - string | default, \'rgba(21,21,21,1)\'\n\n_Set the background color for the navbar. This is the color it will be after scroll. Must be in RGBA format, and the opacity should be set to "1" if you want it fully opaque after scroll._\n\n#### anchorElem  - string | string, default: \'.navbar-nav>li>a\'\n\n_Set the class for your anchor elements_\n\n#### navContainer  - string | string, default: \'.navbar-default\'\n\n_Set the class for the main navigation container_\n\n#### logoElem - string | string, default: \'a.navbar-brand img\'\n\n_Set the class for your logo element_\n\n#### logoParent - string | string, default: \'a.navbar-brand\'\n\n_Set the parent container of your logo element_\n\n#### defaultOffset - number | number, default: 80\n\n_Set the pixel value for the scroll position that the default navbar should display at if page is refreshed_\n\n#### speed - number | number, default: 2\n\n_The speed at which the transition occurs. Can be any positive number, including decimals._\n\n## Demo\n\nCheck the example here: https://gemlarin.github.io/\n\n## Troubleshooting\n\nnavShrink.js is intended to be used with Bootstrap 3\'s navbar component. If the plugin is not working properly, try the following:\n\n1. Compare your navbar markup to the provided example. Ensure that the navbar is properly formatted.\n2. IMPORTANT: DO NOT give your navbar a fixed height.  Height should be set by applying top and bottom padding to the navbars \'a\' tags.\n3. Be sure to presize the logo to match the height designated in the \'logoFinalHeight\' property. Trying to scale from an oversized image is problematic.\n4. Ensure that the classnames designated in the settings list match the classnames used in your navbar. Recommened to use the navbar version in the demo as your base to ensure proper structure and naming. You can also use your own navbar and pass the correct class names during invocation.\n5. For the logo to shrink, the logo image must be wrapped in a container. It is not necessary to apply any styles to the container, but the container class name that you use must be updated in the settings.\n\n## Contribution\n\nWe still have some issues to fix and make navShrink better, if you have any suggestions raise them in [issues](https://github.com/gemlarin/shrinkNav/issues) please.\n\n---\n\nMIT Licensed\n\n**enjoy!**',
-23 silly publish   readmeFilename: 'readme.md',
-23 silly publish   gitHead: '32840ade14388d229edfbd5f46662e9ab2c14705',
-23 silly publish   _id: 'navshrink@1.1.0',
-23 silly publish   _shasum: 'a2a819769926fa5545549660aa552258eeca484a',
-23 silly publish   _from: '.' }
-24 info lifecycle navshrink@1.1.0~prepublishOnly: navshrink@1.1.0
-25 silly lifecycle navshrink@1.1.0~prepublishOnly: no script for prepublishOnly, continuing
-26 verbose getPublishConfig undefined
-27 silly mapToRegistry name navshrink
-28 silly mapToRegistry using default registry
-29 silly mapToRegistry registry https://registry.npmjs.org/
-30 silly mapToRegistry data Result {
-30 silly mapToRegistry   raw: 'navshrink',
-30 silly mapToRegistry   scope: null,
-30 silly mapToRegistry   escapedName: 'navshrink',
-30 silly mapToRegistry   name: 'navshrink',
-30 silly mapToRegistry   rawSpec: '',
-30 silly mapToRegistry   spec: 'latest',
-30 silly mapToRegistry   type: 'tag' }
-31 silly mapToRegistry uri https://registry.npmjs.org/navshrink
-32 verbose publish registryBase https://registry.npmjs.org/
-33 silly publish uploading /Users/danny.gibas/.npm/navshrink/1.1.0/package.tgz
-34 verbose request uri https://registry.npmjs.org/navshrink
-35 verbose request sending authorization for write operation
-36 info attempt registry request try #1 at 12:45:29 PM
-37 verbose request using bearer token for auth
-38 verbose request id a47fd4b5fe2870cd
-39 http request PUT https://registry.npmjs.org/navshrink
-40 http 403 https://registry.npmjs.org/navshrink
-41 verbose headers { 'content-type': 'application/json',
-41 verbose headers   'cache-control': 'max-age=300',
-41 verbose headers   'content-length': '95',
-41 verbose headers   'accept-ranges': 'bytes',
-41 verbose headers   date: 'Tue, 13 Jun 2017 18:45:31 GMT',
-41 verbose headers   via: '1.1 varnish',
-41 verbose headers   connection: 'keep-alive',
-41 verbose headers   'x-served-by': 'cache-dfw1823-DFW',
-41 verbose headers   'x-cache': 'MISS',
-41 verbose headers   'x-cache-hits': '0',
-41 verbose headers   'x-timer': 'S1497379530.272911,VS0,VE1129',
-41 verbose headers   vary: 'Accept-Encoding' }
-42 verbose request invalidating /Users/danny.gibas/.npm/registry.npmjs.org/navshrink on PUT
-43 error publish Failed PUT 403
-44 verbose stack Error: "You cannot publish over the previously published version 1.1.0." : navshrink
-44 verbose stack     at makeError (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:302:12)
-44 verbose stack     at CachingRegistryClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:290:14)
-44 verbose stack     at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:210:14)
-44 verbose stack     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:186:22)
-44 verbose stack     at emitTwo (events.js:106:13)
-44 verbose stack     at Request.emit (events.js:191:7)
-44 verbose stack     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1081:10)
-44 verbose stack     at emitOne (events.js:96:13)
-44 verbose stack     at Request.emit (events.js:188:7)
-44 verbose stack     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1001:12)
-45 verbose statusCode 403
-46 verbose pkgid navshrink
-47 verbose cwd /Users/danny.gibas/Desktop/navShrink
-48 error Darwin 15.0.0
-49 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "publish"
-50 error node v7.4.0
-51 error npm  v4.0.5
-52 error code E403
-53 error "You cannot publish over the previously published version 1.1.0." : navshrink
-54 error If you need help, you may report this error at:
-54 error     <https://github.com/npm/npm/issues>
-55 verbose exit [ 1, true ]
+4 info git [ 'status', '--porcelain' ]
+5 verbose stack Error: Git working directory not clean.
+5 verbose stack M npm-debug.log
+5 verbose stack     at /usr/local/lib/node_modules/npm/lib/version.js:247:19
+5 verbose stack     at /usr/local/lib/node_modules/npm/lib/utils/no-progress-while-running.js:21:8
+5 verbose stack     at ChildProcess.exithandler (child_process.js:202:7)
+5 verbose stack     at emitTwo (events.js:106:13)
+5 verbose stack     at ChildProcess.emit (events.js:191:7)
+5 verbose stack     at maybeClose (internal/child_process.js:885:16)
+5 verbose stack     at Socket.<anonymous> (internal/child_process.js:334:11)
+5 verbose stack     at emitOne (events.js:96:13)
+5 verbose stack     at Socket.emit (events.js:188:7)
+5 verbose stack     at Pipe._handle.close [as _onclose] (net.js:501:12)
+6 verbose cwd /Users/danny.gibas/Desktop/navShrink
+7 error Darwin 15.0.0
+8 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "version" "patch"
+9 error node v7.4.0
+10 error npm  v4.0.5
+11 error Git working directory not clean.
+11 error M npm-debug.log
+12 error If you need help, you may report this error at:
+12 error     <https://github.com/npm/npm/issues>
+13 verbose exit [ 1, true ]
