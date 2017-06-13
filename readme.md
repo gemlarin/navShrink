@@ -54,55 +54,55 @@ Here is the list of available navShrink options:
 
 #### anchorFinalPadding - number | number, default: 30
 
-Set final padding for top & bottom of your anchors
+_Set final padding for top & bottom of your anchors_
 
 #### anchorInitPadding - number | number, default: 40
 
-Set initial padding for top & bottom of your anchors
+_Set initial padding for top & bottom of your anchors_
 
 #### logoInitPadding - number | number, default: 20
 
-Set initial padding for top & bottom of your logo
+_Set initial padding for top & bottom of your logo_
 
 #### logoFinalPadding  - number | number, default: 12
 
-Set final padding for top & bottom of your logo
+_Set final padding for top & bottom of your logo_
 
 #### logoInitHeight - number | number, default: 72
 
-Set initial height for your logo
+_Set initial height for your logo_
 
 #### logoFinalHeight - number | number, default: 56
 
-Set the final height for your logo
+_Set the final height for your logo_
 
 #### bgInitColor  - string | default, 'rgba(21,21,21,1)'
 
-Set the background color for the navbar. This is the color it will be after scroll. Must be in RGBA format, and the opacity should be set to "1" if you want it fully opaque after scroll.
+_Set the background color for the navbar. This is the color it will be after scroll. Must be in RGBA format, and the opacity should be set to "1" if you want it fully opaque after scroll._
 
 #### anchorElem  - string | string, default: '.navbar-nav>li>a'
 
-Set the class for your anchor elements
+_Set the class for your anchor elements_
 
 #### navContainer  - string | string, default: '.navbar-default'
 
-Set the class for the main navigation container
+_Set the class for the main navigation container_
 
 #### logoElem - string | string, default: 'a.navbar-brand img'
 
-Set the class for your logo element
+_Set the class for your logo element_
 
 #### logoParent - string | string, default: 'a.navbar-brand'
 
-Set the parent container of your logo element
+_Set the parent container of your logo element_
 
 #### defaultOffset - number | number, default: 80
 
-Set the pixel value for the scroll position that the default navbar should display at if page is refreshed
+_Set the pixel value for the scroll position that the default navbar should display at if page is refreshed_
 
 #### speed - number | number, default: 2
 
-The speed at which the transition occurs. Can be any positive number, including decimals.
+_The speed at which the transition occurs. Can be any positive number, including decimals._
 
 ## Demo
 
@@ -113,9 +113,10 @@ Check the example here: https://gemlarin.github.io/
 navShrink.js is intended to be used with Bootstrap 3's navbar component. If the plugin is not working properly, try the following:
 
 1. Compare your navbar markup to the provided example. Ensure that the navbar is properly formatted.
-2. DO NOT give your navbar a fixed height.  Height should be set by applying top and bottom margin to the navbars 'a' tags.
-3. Presize the logo to match the height designated in the logoFinalHeight property.
-4. Ensure that the classnames designated in the settings list match the classnames used in your navbar. Recommened to use the version in the demo as your base to ensure proper structure and naming. You can also use your own navbar and pass the propper class names during invocation. 
+2. IMPORTANT: DO NOT give your navbar a fixed height.  Height should be set by applying top and bottom padding to the navbars 'a' tags.
+3. Be sure to presize the logo to match the height designated in the 'logoFinalHeight' property. Trying to scale from an oversized image is problematic.
+4. Ensure that the classnames designated in the settings list match the classnames used in your navbar. Recommened to use the navbar version in the demo as your base to ensure proper structure and naming. You can also use your own navbar and pass the correct class names during invocation.
+5. For the logo to shrink, the logo image must be wrapped in an empty container. It is not necessary to apply any styles to the container, but the container class name that you use must be updated in the settings.
 
 ## Contribution
 
