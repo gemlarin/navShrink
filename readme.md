@@ -21,6 +21,40 @@ If you are using the Bootstrap navbar component, you can simply include javascri
 $('.navbar').navShrink();
 ```
 
+It is recommended to use the default Bootstrap fixed top nav for this plugin. 
+#### HTML
+
+```javascript
+       <header class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                   <a class="navbar-brand" href="#"><img src="img/logo.png" alt="logo"></a>
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <nav id="bs-navbar" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#">Our Services</a></li>
+                        <li><a href="#">Our Products</a></li>
+                        <li><a href="#">Who We Are</a></li>
+                        <li><a href="#">Get Started</a></li>
+                        <li><a class="hamburger hidden-xs" href="#">
+                                <div class="catcher"></div>
+                                <span class="bar top"></span>
+                                <span class="bar middle"></span>
+                                <span class="bar bottom"></span></a>
+                        </li>
+                        <li><a class="telephone hidden-sm" href="tel:8882225555"><i style="font-size:14px;padding-right:5px;" class="fa fa-phone hidden-lg hidden-md hidden-sm" aria-hidden="true"></i>888-222-5555</a></li>
+                       
+                    </ul>
+                </nav>
+            </div>
+        </header>
+'''
+
 ### NPM
 To add navShrink to your project using npm, use the following command:
 #### npm install navshrink
