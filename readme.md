@@ -53,7 +53,7 @@ It is recommended to use the default Bootstrap fixed top nav for this plugin.
                 </nav>
             </div>
         </header>
-'''
+```
 
 ### NPM
 To add navShrink to your project using npm, use the following command:
