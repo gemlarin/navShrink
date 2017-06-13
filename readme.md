@@ -7,7 +7,7 @@ It works in all modern browsers.
 Tested with jQuery versions 2.0+
 
 ### Version
-v1.2
+v1.3
 
 ### Dependancies
 
@@ -42,8 +42,9 @@ anchorElem         : '.navbar-nav>li>a', //anchor elements
 navContainer       : '.navbar-default', //top level element of navbar
 logoElem           : 'a.navbar-brand img', //the actual logo element
 logoParent         : 'a.navbar-brand', //the logo container element
-defaultOffset      : 80 //How far down the screen you want the trigger for the automatic navbar to occur
-speed              : 2 //The speed at which the transition happens. Higher numbers means faster trasition. 
+defaultOffset      : 80, //How far down the screen you want the trigger for the automatic navbar to occur
+speed              : 2, //The speed at which the transition happens. Higher numbers means faster trasition. 
+fadeEnable         : true //Enables or disables the fade transition effect on the navbar
 });
 
 ```
@@ -103,6 +104,10 @@ _Set the pixel value for the scroll position that the default navbar should disp
 #### speed - number | number, default: 2
 
 _The speed at which the transition occurs. Can be any positive number, including decimals._
+
+#### fadeEnable - bool | bool, default: true
+
+_Set to false to disable the nav fade effect._
 
 ## Demo
 

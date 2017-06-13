@@ -22,7 +22,8 @@
             logoElem           : 'a.navbar-brand img',
             logoParent         : 'a.navbar-brand',
             defaultOffset      : 80,
-            speed              : 2
+            speed              : 2,
+			fadeEnable		   : true
             
         }, options);
 		var s_ = settings;
@@ -34,7 +35,7 @@
 
         //if page reloads and page is not scrolled to the top, then 
         //set the default appearance 
-        if(sy > s_.defaultOffset && !scrolling){
+        if(sy > s_.defaultOffset && !scrolling || s_.fadeEnable === false){
             $(s_.anchorElem).css('padding-top', "'" + s_.anchorFinalPadding + "px'");
             $(s_.anchorElem).css('padding-bottom', "'" + s_.anchorFinalPadding + "px'");
             $(s_.navContainer).css('background', s_.bgInitColor);
@@ -89,11 +90,14 @@
             if (offset > 1) {
                 offset = 1;
             }
-            
             //adjust styles based on offset
             $(s_.anchorElem).css('padding-top', s_.anchorInitPadding - (aoff * offset));
             $(s_.anchorElem).css('padding-bottom', s_.anchorInitPadding - (aoff * offset));
-            $(s_.navContainer).css('background', mod + (offset) + ' )');
+			if(s_.fadeEnable === true){
+				$(s_.navContainer).css('background', mod + (offset) + ' )');
+			}else if(s_.fadeEnable === false){
+				$(s_.navContainer).css('background', mod + '1)');
+			}
             $(s_.logoElem).css('height', s_.logoInitHeight - (ldiff * offset));
             $(s_.logoParent).css('padding-top', s_.logoInitPadding - (loff * offset));
         });
