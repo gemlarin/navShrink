@@ -1,6 +1,6 @@
 # NavShrink
 
-NavShrink is a jQuery plugin for your Bootstrap navbar. It works by evaluating scroll position to control the expansion and contraction of the navbar.
+NavShrink is a jQuery plugin for your Bootstrap navbar. It works by evaluating scroll position to control the expansion and contraction of the navbar. On page load, the navbar will be in its expanded height state, but will shrink to a shorter height as the page is scrolled - freeing up additional space in the viewport for content.
 
 It works in all modern browsers.
 
@@ -12,7 +12,7 @@ Tested with jQuery versions 2.0+
 If you are using the Bootstrap navbar component, you can simply include javascript file and init NavShrink with one line:
 
 ```javascript
-$('element').navShrink();
+$('.navbar').navShrink();
 ```
 
 ### Options
