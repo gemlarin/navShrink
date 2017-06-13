@@ -9,7 +9,7 @@ Tested with jQuery versions 2.0+
 ### Version
 v1.1
 
-# Dependancies
+### Dependancies
 
 Bootstrap 3, jQuery
 
