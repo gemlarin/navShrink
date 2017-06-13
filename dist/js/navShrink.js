@@ -76,7 +76,7 @@
             return logoHeightOffSet;
         };
         
-        var $navcontain = $(settings.navContainer);
+        var $navcontain = $(s_.navContainer);
         
         //Update all CSS properties during scroll event
         window.addEventListener('scroll', function (event) {
@@ -94,7 +94,7 @@
             //adjust styles based on offset
             $(s_.anchorElem).css('padding-top', s_.anchorInitPadding - (aoff * offset));
             $(s_.anchorElem).css('padding-bottom', s_.anchorInitPadding - (aoff * offset));
-            $(s_.navContainer).css('background', mod + (offset *2) + ' )');
+            $(s_.navContainer).css('background', mod + (offset) + ' )');
             $(s_.logoElem).css('height', s_.logoInitHeight - (ldiff * offset));
             $(s_.logoParent).css('padding-top', s_.logoInitPadding - (loff * offset));
         });
