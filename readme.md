@@ -42,7 +42,6 @@ It is recommended to use the default Bootstrap fixed top nav for this plugin.
                         <li><a href="#">Who We Are</a></li>
                         <li><a href="#">Get Started</a></li>
                         <li><a class="hamburger hidden-xs" href="#">
-                                <div class="catcher"></div>
                                 <span class="bar top"></span>
                                 <span class="bar middle"></span>
                                 <span class="bar bottom"></span></a>
@@ -57,7 +56,7 @@ It is recommended to use the default Bootstrap fixed top nav for this plugin.
 
 ### NPM
 To add navShrink to your project using npm, use the following command:
-#### npm install navshrink
+#### $ npm install navshrink
 
 ### Options
 
