@@ -142,7 +142,7 @@ _Set the parent container of your logo element_
 
 #### defaultOffset - number | number, default: 80
 
-_Set the pixel value for the scroll position that the default navbar should display at if page is refreshed or reloaded. This should typically be the same as the final height of your navbar. Should the page refresh or reload while the scrollbar is not at top of page, this will force the navbar into its final scroll appearance to prevent style conflicts. This behavior varies somewhat between browsers so I recommend testing different offsets._
+_This should typically be the same as the final height of your navbar. Should the page refresh or reload while the scrollbar is not at top of page, this will force the navbar into its final scroll appearance to prevent style conflicts._
 
 
 #### speed - number | number, default: 2
