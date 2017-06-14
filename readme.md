@@ -1,6 +1,6 @@
 # NavShrink
 
-NavShrink is a jQuery plugin for your Bootstrap navbar. It works by evaluating scroll position to control the expansion and contraction of the navbar. On page load, the navbar will be in its expanded height state, but will shrink to a shorter height as the page is scrolled - freeing up additional space in the viewport for content.
+NavShrink is a jQuery plugin for your Bootstrap navbar. It works by evaluating scroll position to control the expansion, contraction and color/opacity of the navbar background.
 
 It works in all modern browsers.
 
@@ -69,7 +69,7 @@ logoInitPadding    : 20, // Before scroll - initial padding for the top and bott
 logoFinalPadding   : 12, // After scroll  - final padding for top and bottom of logo
 logoInitHeight     : 72, // Before scroll - initial height of logo
 logoFinalHeight    : 56, // After scroll  - final height of logo
-bgInitColor        : 'rgba(21,21,21,1)',   // final background color of nav navbar. MUST be in RGBA with an opacity of 1.
+bgInitColor        : 'rgba(21,21,21,1)',   // final background color of nav navbar. MUST be in RGBA format.
 anchorElem         : '.navbar-nav>li>a',   // anchor elements
 navContainer       : '.navbar-default',    // top level element of navbar
 logoElem           : 'a.navbar-brand img', // the actual logo element
@@ -117,7 +117,7 @@ _Set the final height for your logo_
 
 #### bgInitColor  - string | default, 'rgba(21,21,21,1)'
 
-_Set the background color for the navbar. This is the color it will be after scroll. Must be in RGBA format, and the opacity should be set to "1" if you want it fully opaque after scroll._
+_Set the background color for the navbar. This is the color the navbar background will be after scroll completes. Must be in RGBA format._
 
 
 #### anchorElem  - string | string, default: '.navbar-nav>li>a'
