@@ -165,7 +165,7 @@ navShrink.js is intended to be used with Bootstrap 3's navbar component. If the 
 
 1. Compare your navbar markup to the provided example. Ensure that the navbar is properly formatted.
 2. IMPORTANT: DO NOT give your navbar a fixed height.  Height should be set by applying top and bottom padding to the navbars 'a' tags.
-3. Be sure to presize the logo to match the height designated in the 'logoFinalHeight' property. Trying to scale from an oversized image is problematic.
+3. Be sure to presize the logo to match the height designated in the 'logoInitHeight' property. Trying to scale from an oversized image is problematic.
 4. Ensure that the classnames designated in the settings list match the classnames used in your navbar. Recommened to use the navbar version in the demo as your base to ensure proper structure and naming. You can also use your own navbar and pass the correct class names during invocation.
 5. For the logo to shrink, the logo image must be wrapped in a container. It is not necessary to apply any styles to the container, but the container class name that you use must be updated in the settings.
 
