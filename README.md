@@ -226,7 +226,7 @@ navShrink.js is intended to be used with Bootstrap 3's navbar component. If the 
 
 ## CONTRIBUTION
 
-We still have some issues to fix and make navShrink better, if you have any suggestions raise them in [issues](https://github.com/gemlarin/shrinkNav/issues) please.
+We still have some issues to fix and make navShrink better, if you have any suggestions raise them in [issues](https://github.com/gemlarin/navShrink/issues) please.
 
 ---
 
