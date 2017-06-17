@@ -6,14 +6,14 @@ It works in all modern browsers.
 
 Tested with jQuery versions 2.0+
 
-### Version
-v1.3
+### VERSION
+v1.4
 
-### Dependancies
+### DEPENDANCIES
 
 Bootstrap 3, jQuery
 
-### Usage
+### USAGE
 
 If you are using the Bootstrap navbar component, you can simply include javascript file and init NavShrink with one line:
 
@@ -21,8 +21,9 @@ If you are using the Bootstrap navbar component, you can simply include javascri
 $('.navbar').navShrink();
 ```
 
-It is recommended to use the default Bootstrap fixed top nav for this plugin. 
-#### HTML
+Important Note: It is recommended to use the default Bootstrap fixed-top nav structure for this plugin - as seen below. 
+
+#### THE HTML
 
 ```javascript
        <header class="navbar navbar-default navbar-fixed-top">
@@ -53,11 +54,35 @@ It is recommended to use the default Bootstrap fixed top nav for this plugin.
         </header>
 ```
 
+### THE CSS
+The CSS is up to you, however, it is strongly recommended that you give your elements default values. In the event that the script does not fire, the nav will fall back on this default state. 
+
+```
+a.navbar-brand{
+    padding-top:20px; //should match the value used in logoInitPadding
+}
+
+a.navbar-brand img {
+    height: 74px; //should match the value used in logoInitHeight 
+    width: auto;
+}
+
+@media (max-width: 768px) {
+    a.navbar-brand{
+        padding-top:10px;  //should match value used in logoMobileFinalPadding  
+    }
+    a.navbar-brand img {
+        width: auto;
+        height:50px; //should match value used in logoMobileInitHeight
+    }
+} 
+```
+
 ### NPM
 To add navShrink to your project using npm, use the following command:
 #### $ npm install navshrink
 
-### Options
+### OPTIONS
 
 You're also able to use some of the options that let you customize it as you wish:
 
@@ -69,6 +94,11 @@ logoInitPadding    : 20, // Before scroll - initial padding for the top and bott
 logoFinalPadding   : 12, // After scroll  - final padding for top and bottom of logo
 logoInitHeight     : 72, // Before scroll - initial height of logo
 logoFinalHeight    : 56, // After scroll  - final height of logo
+mobileBreakpoint : 765, // Breakpoint of mobile nav
+logoMobileInitPadding : 20, //Before scroll - initial mobile logo padding
+logoMobileFinalPadding : 10, //After scroll - final mobile logo padding
+logoMobileFinalHeight : 30, //Before scroll - initial mobile logo height
+logoMobileInitHeight : 50, //After scroll - final mobile logo height
 bgInitColor        : 'rgba(21,21,21,1)',   // final background color of nav navbar. MUST be in RGBA format.
 anchorElem         : '.navbar-nav>li>a',   // anchor elements
 navContainer       : '.navbar-default',    // top level element of navbar
@@ -77,11 +107,12 @@ logoParent         : 'a.navbar-brand',     // the logo container element
 defaultOffset      : 80,    // How far down the screen (px) you want the trigger the on reload behavior
 speed              : 2,     // The speed at which the transition happens. Higher numbers means faster trasition. 
 fadeEnable         : true   // Enables or disables the fade transition effect on the navbar
+responsiveEnable : true // Enables or disables responsive mode
 });
 
 ```
 
-## Documentation
+## DOCUMENTATION
 
 Here is the list of available navShrink options:
 
@@ -93,6 +124,36 @@ _Set initial padding for top & bottom of your anchors_
 #### anchorFinalPadding - number | number, default: 30
 
 _Set final padding for top & bottom of your anchors_
+
+
+#### logoMobileInitPadding  - number | number, default: 20
+
+_Set initial padding for top & bottom of your logo on mobile_
+
+
+#### logoMobileFinalPadding  - number | number, default: 10
+
+_Set final padding for top & bottom of your logo on mobile_
+
+
+#### logoMobileFinalHeight - number | number, default: 30
+
+_Set initial height for your logo on mobile_
+
+
+#### logoMobileInitHeight - number | number, default: 50
+
+_Set the final height for your logo on mobile_
+
+ 
+#### responsiveEnable - bool | bool, default: true
+
+_Breakpoint of the mobile nav. Should match your Bootstrap small breakpoint_
+
+
+#### mobileBreakpoint - number | number, default: 765
+
+_Breakpoint of the mobile nav. Should match your Bootstrap small breakpoint_
 
 
 #### logoInitPadding - number | number, default: 20
@@ -155,11 +216,11 @@ _The speed at which the transition occurs. Can be any positive number, including
 _Set to false to disable the nav fade effect._
 
 
-## Demo
+## DEMO
 
 Check the example here: https://gemlarin.github.io/index.html
 
-## Troubleshooting
+## TROUBLESHOOTING
 
 navShrink.js is intended to be used with Bootstrap 3's navbar component. If the plugin is not working properly, try the following:
 
@@ -169,7 +230,7 @@ navShrink.js is intended to be used with Bootstrap 3's navbar component. If the 
 4. Ensure that the classnames designated in the settings list match the classnames used in your navbar. Recommened to use the navbar version in the demo as your base to ensure proper structure and naming. You can also use your own navbar and pass the correct class names during invocation.
 5. For the logo to shrink, the logo image must be wrapped in a container. It is not necessary to apply any styles to the container, but the container class name that you use must be updated in the settings.
 
-## Contribution
+## CONTRIBUTION
 
 We still have some issues to fix and make navShrink better, if you have any suggestions raise them in [issues](https://github.com/gemlarin/shrinkNav/issues) please.
 

@@ -1,6 +1,6 @@
 {
   "name": "navshrink",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "A plugin for use with the navbar component in Bootstrap 3. Shrinks the height and fades in the background of the navbar while scrolling dwn the page",
   "main": "index.js",
   "scripts": {
