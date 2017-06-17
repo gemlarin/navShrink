@@ -69,7 +69,7 @@ a.navbar-brand img {
 
 @media (max-width: 768px) {
     a.navbar-brand{
-        padding-top:10px;  //should match value used in logoMobileFinalPadding  
+        padding-top:10px;  //should match value used in logoMobilePadding  
     }
     a.navbar-brand img {
         width: auto;
@@ -95,8 +95,7 @@ logoFinalPadding   : 12, // After scroll  - final padding for top and bottom of 
 logoInitHeight     : 72, // Before scroll - initial height of logo
 logoFinalHeight    : 56, // After scroll  - final height of logo
 mobileBreakpoint : 765, // Breakpoint of mobile nav
-logoMobileInitPadding : 20, //Before scroll - initial mobile logo padding
-logoMobileFinalPadding : 10, //After scroll - final mobile logo padding
+logoMobilePadding : 10, //Mobile logo top padding
 logoMobileFinalHeight : 30, //Before scroll - initial mobile logo height
 logoMobileInitHeight : 50, //After scroll - final mobile logo height
 bgInitColor        : 'rgba(21,21,21,1)',   // final background color of nav navbar. MUST be in RGBA format.
@@ -126,14 +125,9 @@ _Set initial padding for top & bottom of your anchors_
 _Set final padding for top & bottom of your anchors_
 
 
-#### logoMobileInitPadding  - number | number, default: 20
+#### logoMobilePadding  - number | number, default: 10
 
-_Set initial padding for top & bottom of your logo on mobile_
-
-
-#### logoMobileFinalPadding  - number | number, default: 10
-
-_Set final padding for top & bottom of your logo on mobile_
+_Set padding for top of your logo on mobile_
 
 
 #### logoMobileFinalHeight - number | number, default: 30
