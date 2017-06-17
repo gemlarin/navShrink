@@ -7,7 +7,7 @@ It works in all modern browsers.
 Tested with jQuery versions 2.0+
 
 ### VERSION
-v1.4
+v1.4.2
 
 ### DEPENDANCIES
 
@@ -100,7 +100,7 @@ logoMobileFinalHeight : 30, //Before scroll - initial mobile logo height
 logoMobileInitHeight : 50, //After scroll - final mobile logo height
 bgInitColor        : 'rgba(21,21,21,1)',   // final background color of nav navbar. MUST be in RGBA format.
 anchorElem         : '.navbar-nav>li>a',   // anchor elements
-navContainer       : '.navbar-default',    // top level element of navbar
+navContainer       : this,    // top level element of navbar
 logoElem           : 'a.navbar-brand img', // the actual logo element
 logoParent         : 'a.navbar-brand',     // the logo container element
 defaultOffset      : 80,    // How far down the screen (px) you want the trigger the on reload behavior
@@ -180,9 +180,9 @@ _Set the background color for the navbar. This is the color the navbar backgroun
 _Set the class for your anchor elements_
 
 
-#### navContainer  - string | string, default: '.navbar-default'
+#### navContainer  - string | string, default: this
 
-_Set the class for the main navigation container_
+_Set the class for the main navigation container. 'This' refers to the element that the init is bound to, typically '.navbar' or '.navbar-default'_
 
 
 #### logoElem - string | string, default: 'a.navbar-brand img'
@@ -226,7 +226,7 @@ navShrink.js is intended to be used with Bootstrap 3's navbar component. If the 
 
 ## CONTRIBUTION
 
-We still have some issues to fix and make navShrink better, if you have any suggestions raise them in [issues](https://github.com/gemlarin/shrinkNav/issues) please.
+We still have some issues to fix and make navShrink better, if you have any suggestions raise them in [issues](https://github.com/gemlarin/navShrink/issues) please.
 
 ---
 
