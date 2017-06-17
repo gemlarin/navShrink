@@ -7,7 +7,7 @@ It works in all modern browsers.
 Tested with jQuery versions 2.0+
 
 ### VERSION
-v1.4
+v1.4.2
 
 ### DEPENDANCIES
 
@@ -180,9 +180,9 @@ _Set the background color for the navbar. This is the color the navbar backgroun
 _Set the class for your anchor elements_
 
 
-#### navContainer  - string | string, default: '.navbar-default'
+#### navContainer  - string | string, default: this
 
-_Set the class for the main navigation container_
+_Set the class for the main navigation container. 'This' refers to the element that the init is bound to, typically '.navbar' or '.navbar-default'_
 
 
 #### logoElem - string | string, default: 'a.navbar-brand img'

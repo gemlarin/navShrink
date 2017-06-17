@@ -1,5 +1,5 @@
 /*!
- * navShrink jQuery Utility v1.4 -jQuery,-Bootstrap 3,-Navbar,-shrink,-fade,-effects
+ * navShrink jQuery Utility v1.4.2 -jQuery,-Bootstrap 3,-Navbar,-shrink,-fade,-effects
  * https://github.com/gemlarin/navShrink
  *
  * Requires jQuery.js v2.0+
@@ -32,7 +32,7 @@
             logoMobileInitHeight : 50,
             bgInitColor : 'rgba(21,21,21,1)',
             anchorElem  : '.navbar-nav>li>a',
-            navContainer: '.navbar-default',
+            navContainer: this,
             logoElem : 'a.navbar-brand img',
             logoParent : 'a.navbar-brand',
             defaultOffset : 80,
@@ -42,8 +42,7 @@
 
         }, options);
         var s_ = settings,
-            scrolling = false,
-            $navcontain = $(s_.navContainer);
+            scrolling = false
 
         //regex to extract the rgb values from the rgba string
         var str = s_.bgInitColor;
