@@ -7,7 +7,7 @@ It works in all modern browsers.
 Tested with jQuery versions 2.0+
 
 ### VERSION
-v1.4.2
+v1.5
 
 ### DEPENDANCIES
 
@@ -142,7 +142,7 @@ _Set the final height for your logo on mobile_
  
 #### responsiveEnable - bool | bool, default: true
 
-_Breakpoint of the mobile nav. Should match your Bootstrap small breakpoint_
+_Enable responsive functionality. Setting to false will disable the responsive logo, requiring you to set the mobile logo height through your CSS. The fade effect will still be applied on mobile. To disable fade, set fadeEnable : false_
 
 
 #### mobileBreakpoint - number | number, default: 765
@@ -207,7 +207,7 @@ _The speed at which the transition occurs. Can be any positive number, including
 
 #### fadeEnable - bool | bool, default: true
 
-_Set to false to disable the nav fade effect._
+_Set to false to disable the nav fade effect. Result is similar to responsiveEnable : false, without the need to define height for mobile in your CSS.
 
 
 ## DEMO

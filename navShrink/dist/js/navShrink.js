@@ -1,5 +1,5 @@
 /*!
- * navShrink jQuery Utility v1.4.2 -jQuery,-Bootstrap 3,-Navbar,-shrink,-fade,-effects
+ * navShrink jQuery Utility v1.5 -jQuery,-Bootstrap 3,-Navbar,-shrink,-fade,-effects
  * https://github.com/gemlarin/navShrink
  *
  * Requires jQuery.js v2.0+
@@ -20,25 +20,25 @@
 
         // Establish our default settings
         var settings = $.extend({
-            anchorFinalPadding : 30,
-            anchorInitPadding : 40,
-            logoInitPadding : 20,
-            logoFinalPadding : 12,
-            logoInitHeight : 72,
-            logoFinalHeight : 56,
-            mobileBreakpoint : 765,
-            logoMobilePadding : 10,
-            logoMobileFinalHeight : 30,
-            logoMobileInitHeight : 50,
-            bgInitColor : 'rgba(21,21,21,1)',
-            anchorElem  : '.navbar-nav>li>a',
+            anchorFinalPadding: 30,
+            anchorInitPadding: 40,
+            logoInitPadding: 20,
+            logoFinalPadding: 12,
+            logoInitHeight: 72,
+            logoFinalHeight: 56,
+            mobileBreakpoint: 765,
+            logoMobilePadding: 10,
+            logoMobileFinalHeight: 30,
+            logoMobileInitHeight: 50,
+            bgInitColor: 'rgba(21,21,21,1)',
+            anchorElem: '.navbar-nav>li>a',
             navContainer: this,
-            logoElem : 'a.navbar-brand img',
-            logoParent : 'a.navbar-brand',
-            defaultOffset : 80,
-            speed : 2,
-            fadeEnable : true,
-            responsiveEnable : true
+            logoElem: 'a.navbar-brand img',
+            logoParent: 'a.navbar-brand',
+            defaultOffset: 80,
+            speed: 2,
+            fadeEnable: true,
+            responsiveEnable: true
 
         }, options);
         var s_ = settings,
@@ -51,7 +51,7 @@
 
         //if page reloads and page is not scrolled to the top, then 
         //set the default appearance 
-        if (sy > s_.defaultOffset && !scrolling || s_.fadeEnable === false) {
+        if (sy > s_.defaultOffset && !scrolling || !s_.fadeEnable) {
             $(s_.anchorElem).css('padding-top', "'" + s_.anchorFinalPadding + "px'");
             $(s_.anchorElem).css('padding-bottom', "'" + s_.anchorFinalPadding + "px'");
             $(s_.navContainer).css('background', s_.bgInitColor);
@@ -65,6 +65,22 @@
                 var pp = getLogoPadding();
                 $(s_.logoParent).css('padding-top', pp);
             }
+        }
+
+        //set initial heights
+        //fade disabled
+        if (windowWidth() > s_.mobileBreakpoint && !s_.fadeEnable) {
+            $(s_.logoParent).css('paddingTop', s_.logoFinalPadding);
+        }
+        //not responsive and fade enabled
+        if (windowWidth() <= s_.mobileBreakpoint && !s_.responsiveEnable && s_.fadeEnable) {
+            $(s_.logoElem).css('height', s_.logoMobileFinalHeight);
+            $(s_.logoParent).css('paddingTop', s_.logoMobilePadding);
+        }
+        //responsive && fade enabled
+        if (windowWidth() <= s_.mobileBreakpoint && s_.responsiveEnable && s_.fadeEnable) {
+            $(s_.logoElem).css('height', s_.logoMobileInitHeight);
+            $(s_.logoParent).css('paddingTop', s_.logoMobilePadding);
         }
 
         function offset() {
@@ -88,21 +104,18 @@
         }
 
         //calculate anchor offset padding
-        //grab the value difference between Init and Final anchor padding
         function getAnchorOffset() {
             var aoffSet = s_.anchorInitPadding - s_.anchorFinalPadding;
             return aoffSet;
         }
 
         //calculate logo offset padding
-        //grab the value difference between Init and Final logo padding
         function getLogoOffset(initPadding, finalPadding) {
             var loffSet = initPadding - finalPadding;
             return loffSet;
         }
 
         //calculate the logos height offset
-        //grab the value difference between Init and Final anchor height
         function getLogoDiff(initHeight, finalHeight) {
             var logoHeightOffSet = initHeight - finalHeight;
             return logoHeightOffSet;
@@ -115,36 +128,60 @@
 
         //handle cases where the window is resized and not at top of page
         $(window).resize(function () {
-            if (windowWidth() > s_.mobileBreakpoint || !s_.responsiveEnable) {
+
+            //DESKTOP
+            if (windowWidth() > s_.mobileBreakpoint && s_.fadeEnable) {
                 $(s_.logoElem).css('height', s_.logoInitHeight - (getLogoDiff(s_.logoInitHeight, s_.logoFinalHeight) * offset()));
-                $(s_.logoParent).css('padding-top', s_.logoInitPadding - (getLogoOffset(s_.logoInitPadding, s_.logoFinalPadding) * offset()));
+                $(s_.logoParent).css('paddingTop', s_.logoInitPadding - (getLogoOffset(s_.logoInitPadding, s_.logoFinalPadding) * offset()));
+            } else if (windowWidth() > s_.mobileBreakpoint && !s_.fadeEnable) {
+                $(s_.logoElem).css('height', s_.logoInitHeight - (getLogoDiff(s_.logoInitHeight, s_.logoFinalHeight) * offset()));
+                $(s_.logoParent).css('paddingTop', s_.logoFinalPadding);
             }
-            //if responsive
-            else if (windowWidth() <= s_.mobileBreakpoint && s_.responsiveEnable) {
+            //MOBILE
+            else if (windowWidth() <= s_.mobileBreakpoint && !s_.fadeEnable) {
+                $(s_.logoElem).css('height', s_.logoMobileFinalHeight);
+                $(s_.logoParent).css('paddingTop', s_.logoMobilePadding);
+            } else if ((windowWidth() <= s_.mobileBreakpoint && !s_.responsiveEnable && !s_.fadeEnable) || (windowWidth() <= s_.mobileBreakpoint && !s_.responsiveEnable && s_.fadeEnable)) {
+                $(s_.logoElem).css('height', s_.logoMobileFinalHeight);
+                $(s_.logoParent).css('paddingTop', s_.logoMobilePadding);
+            } else if ((windowWidth() <= s_.mobileBreakpoint && !s_.responsiveEnable && !s_.fadeEnable) || (windowWidth() <= s_.mobileBreakpoint && s_.responsiveEnable && s_.fadeEnable)) {
                 $(s_.logoElem).css('height', s_.logoMobileInitHeight - (getLogoDiff(s_.logoMobileInitHeight, s_.logoMobileFinalHeight) * offset()));
+                $(s_.logoParent).css('paddingTop', s_.logoMobilePadding);
             }
         });
 
         //Update all CSS properties during scroll event
         window.addEventListener('scroll', function (event) {
             scrolling = true;
-
-            //style handlers
-            $(s_.anchorElem).css('padding-top', s_.anchorInitPadding - (getAnchorOffset() * offset()));
-            $(s_.anchorElem).css('padding-bottom', s_.anchorInitPadding - (getAnchorOffset() * offset()));
+            //position handlers for anchors
+            $(s_.anchorElem).css('paddingTop', s_.anchorInitPadding - (getAnchorOffset() * offset()));
+            $(s_.anchorElem).css('paddingBottom', s_.anchorInitPadding - (getAnchorOffset() * offset()));
+            
+            //fade handler
             if (s_.fadeEnable === true) {
                 $(s_.navContainer).css('background', mod + (offset()) + ' )');
             } else if (s_.fadeEnable === false) {
                 $(s_.navContainer).css('background', mod + '1)');
             }
-            if (windowWidth() > s_.mobileBreakpoint || !s_.responsiveEnable) {
+            
+            //position and scale handlers
+            if (windowWidth() > s_.mobileBreakpoint && !s_.fadeEnable) {
                 $(s_.logoElem).css('height', s_.logoInitHeight - (getLogoDiff(s_.logoInitHeight, s_.logoFinalHeight) * offset()));
-                $(s_.logoParent).css('padding-top', s_.logoInitPadding - (getLogoOffset(s_.logoInitPadding, s_.logoFinalPadding) * offset()));
-            }
-            //if responsive
-            else if (windowWidth() <= s_.mobileBreakpoint && s_.responsiveEnable) {
-                $(s_.logoElem).css('height', s_.logoMobileInitHeight - (getLogoDiff(s_.logoMobileInitHeight, s_.logoMobileFinalHeight) * offset()));
-                $(s_.logoParent).css('padding-top', s_.logoMobilePadding);
+                $(s_.logoParent).css('paddingTop', s_.logoFinalPadding);
+            } else if (windowWidth() > s_.mobileBreakpoint && s_.fadeEnable) {
+                $(s_.logoElem).css('height', s_.logoInitHeight - (getLogoDiff(s_.logoInitHeight, s_.logoFinalHeight) * offset()));
+                $(s_.logoParent).css('paddingTop', s_.logoInitPadding - (getLogoOffset(s_.logoInitPadding, s_.logoFinalPadding) * offset()));
+            } else if (windowWidth() <= s_.mobileBreakpoint && s_.responsiveEnable) {
+                if (s_.fadeEnable) {
+                    $(s_.logoElem).css('height', s_.logoMobileInitHeight - (getLogoDiff(s_.logoMobileInitHeight, s_.logoMobileFinalHeight) * offset()));
+                    $(s_.logoParent).css('paddingTop', s_.logoMobilePadding);
+                } else if (!s_.fadeEnable) {
+                    $(s_.logoElem).css('height', s_.logoMobileFinalHeight);
+                }
+            } else if (windowWidth() <= s_.mobileBreakpoint && !s_.responsiveEnable) {
+                if (s_.fadeEnable) {
+                    $(s_.logoElem).css('height', s_.logoMobileFinalHeight);
+                }
             }
         });
     }
