@@ -1,3 +1,11 @@
+#Bootstrap 4 will be supported in the next release. This version can be used for Bootstrap 4 as-is with basic modifications to your class naming.
+
+###coming in v.2
+- Proper Bootstrap 4 support
+- Full opacity fade-in for backgrounds
+- Auto animate in / out option
+
+
 # NavShrink
 
 NavShrink is a jQuery plugin for your Bootstrap navbar. It works by evaluating scroll position to control the expansion, contraction and color/opacity of the navbar background.
@@ -11,7 +19,7 @@ v1.5
 
 ### DEPENDANCIES
 
-Bootstrap 3, jQuery
+Bootstrap 3, Bootstrap 4*, jQuery
 
 ### USAGE
 
