@@ -1,4 +1,4 @@
-# Bootstrap 4 will be supported in the next release. This version can be used for Bootstrap 4 as-is with basic modifications to your class naming.
+# NOTE: Bootstrap 4 will be fully supported in the next release. The current version can be used for Bootstrap 4 with basic modifications to your class naming.
 
 ### coming in v.2
 - Proper Bootstrap 4 support
