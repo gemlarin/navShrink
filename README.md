@@ -1,6 +1,6 @@
-#Bootstrap 4 will be supported in the next release. This version can be used for Bootstrap 4 as-is with basic modifications to your class naming.
+# Bootstrap 4 will be supported in the next release. This version can be used for Bootstrap 4 as-is with basic modifications to your class naming.
 
-###coming in v.2
+### coming in v.2
 - Proper Bootstrap 4 support
 - Full opacity fade-in for backgrounds
 - Auto animate in / out option
